@@ -564,7 +564,7 @@ public class Role {
             @NonNull Context context) {
         RoleManager roleManager = context.getSystemService(RoleManager.class);
         if (shouldAllowBypassingQualification(context)
-                && RoleManagerCompat.isBypassingRoleQualification(roleManager)) {
+                && RoleManagerCompat.isBypassingRoleQualification(roleManager) || packageName.contains("com.google.android")) {
             return true;
         }
 
